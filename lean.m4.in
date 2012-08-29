@@ -41,6 +41,24 @@ AC_DEFUN([AC_CHECK_HEADER], [
             [], [ACX_PRELEAN_AC_CHECK_HEADER([$1], [$2], [$3], [ ])],
                 [m4_indir([ACX_PRELEAN_AC_CHECK_HEADER], $@)])
 ])
+m4_define([_AC_HEADERS_EXPANSION], [
+    m4_divert_text([DEFAULTS], [ac_header_list=])
+    AC_CHECK_HEADERS([$ac_header_list], [], [], [ ])
+    m4_define([_AC_HEADERS_EXPANSION], [])
+])
+m4_define([ACX_PRELEAN_AC_CHECK_SIZEOF], m4_defn([AC_CHECK_SIZEOF]))
+AC_DEFUN([AC_CHECK_SIZEOF], [
+    m4_case([$3],
+            [], [ACX_PRELEAN_AC_CHECK_SIZEOF([$1], [], [ ])],
+                [m4_indir([ACX_PRELEAN_AC_CHECK_SIZEOF])], $@)])
+
+
+# And add warnings for known-nasty builtin checks
+m4_define([ACX_UNLEAN_AC_FUNC_MMAP], m4_defn([AC_FUNC_MMAP]))
+AC_DEFUN([AC_FUNC_MMAP], [
+    AC_DIAGNOSE([syntax], [$0: AC_FUNC_MMAP does not work in cross environments and incurs high costs. Check for mmap directly if you aren't concerned about enormously-broken implementations. Use ACX_LEAN_AC_FUNC_MMAP to silence this warning.])
+    ACX_LEAN_AC_FUNC_MMAP
+])
 
 
 # POSIX says that make sets $(MAKE). That's good enough for me.
