@@ -103,6 +103,7 @@ AC_DEFUN([ACX_LEAN_FORCE_CACHE], [
     m4_define([acx_lean_forced_cache], [yes])
     if test "$cache_file" = "/dev/null"; then
         cache_file=config.cache
+        touch config.cache
     fi
 ])
 
