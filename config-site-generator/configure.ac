@@ -83,6 +83,31 @@ AC_HEADER_SYS_WAIT
 AC_HEADER_TIME
 AC_HEADER_TIOCGWINSZ
 
+# Header list scraped from musl 0.9.4
+AC_CHECK_HEADERS([ \
+aio.h alloca.h ar.h arpa/inet.h arpa/nameser.h arpa/telnet.h assert.h \
+byteswap.h complex.h cpio.h crypt.h ctype.h dirent.h dlfcn.h elf.h endian.h \
+err.h errno.h fcntl.h features.h fenv.h float.h fnmatch.h ftw.h getopt.h glob.h \
+grp.h iconv.h inttypes.h iso646.h langinfo.h lastlog.h libgen.h libintl.h \
+limits.h locale.h malloc.h math.h memory.h mntent.h monetary.h mqueue.h netdb.h \
+net/ethernet.h net/if_arp.h net/if.h netinet/icmp6.h netinet/if_ether.h \
+netinet/in.h netinet/in_systm.h netinet/ip6.h netinet/ip.h netinet/ip_icmp.h \
+netinet/tcp.h netinet/udp.h netpacket/packet.h net/route.h nl_types.h paths.h \
+poll.h pthread.h pty.h pwd.h regex.h resolv.h sched.h search.h semaphore.h \
+setjmp.h shadow.h signal.h spawn.h stdarg.h stdbool.h stddef.h stdint.h \
+stdio_ext.h stdio.h stdlib.h string.h strings.h stropts.h syscall.h sys/epoll.h \
+sys/eventfd.h sysexits.h sys/file.h sys/fsuid.h sys/inotify.h sys/ioctl.h \
+sys/io.h sys/ipc.h sys/kd.h sys/klog.h syslog.h sys/mman.h sys/mount.h \
+sys/msg.h sys/param.h sys/poll.h sys/prctl.h sys/procfs.h sys/ptrace.h \
+sys/reboot.h sys/reg.h sys/resource.h sys/select.h sys/sem.h sys/sendfile.h \
+sys/shm.h sys/signalfd.h sys/socket.h sys/soundcard.h sys/statfs.h sys/stat.h \
+sys/statvfs.h sys/stropts.h sys/swap.h sys/syscall.h sys/sysctl.h sys/sysinfo.h \
+sys/syslog.h sys/sysmacros.h sys/time.h sys/times.h sys/timex.h sys/types.h \
+sys/ucontext.h sys/uio.h sys/un.h sys/user.h sys/utsname.h sys/vfs.h sys/vt.h \
+sys/wait.h sys/xattr.h tar.h termios.h tgmath.h time.h ucontext.h ulimit.h \
+unistd.h utime.h utmp.h utmpx.h wchar.h wctype.h wordexp.h
+])
+
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_GETGROUPS
 AC_TYPE_INT8_T
