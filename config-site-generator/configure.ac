@@ -4,8 +4,8 @@
 rm -f config.cache
 
 AC_PREREQ([2.60])
-AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([config.h.in])
+AC_INIT([config-site-generator], [hg], [/dev/null])
+AC_CONFIG_SRCDIR([test.c])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([scripts])
 
@@ -23,12 +23,10 @@ AC_DEFUN([AC_MSG_ERROR], [
     test -e conftest.dir && rm -rf conftest.dir ])
 
 # Checks for programs.
-AC_PROG_CC
+AC_PROG_CC_C89
 AC_PROG_CC_C_O
 AC_PROG_CPP
 AC_PROG_CC_STDC
-AC_PROG_CC_C89
-AC_PROG_CC_C99
 AC_PROG_GCC_TRADITIONAL
 AC_PROG_CXX
 AC_PROG_CXXCPP
@@ -55,6 +53,8 @@ AC_PROG_LN_S
 AC_PROG_RANLIB
 AC_PROG_SED
 AC_PROG_YACC
+
+AM_PROG_AS
 
 # Checks for system services.
 AC_PATH_X
